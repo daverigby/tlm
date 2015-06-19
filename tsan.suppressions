@@ -1,0 +1,8 @@
+# ThreadSanitizer suppressions file for Couchbase
+# https://code.google.com/p/thread-sanitizer/wiki/Flags
+
+# In memcached we choose to ignore accesses to the conn structs from
+# other threads when printing connection statistics. We accept the
+# possible stale / outdated information as we don't want to add
+# additional locking overhead / complexity in the common case.
+race:get_connection_stats
