@@ -77,6 +77,7 @@ INCLUDE(FindCouchbaseGo)
 INCLUDE(FindCouchbaseBreakpad)
 INCLUDE(FindCouchbaseFlatbuffers)
 INCLUDE(FindCouchbaseValgrind)
+INCLUDE(FindCouchbaseOpenVCDiff)
 
 IF (WIN32)
    SET(COUCHBASE_NETWORK_LIBS "Ws2_32")
