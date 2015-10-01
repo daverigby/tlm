@@ -29,11 +29,32 @@ IF (APPLE)
    ENDIF (${CMAKE_MAJOR_VERSION} LESS 3)
 ENDIF(APPLE)
 
+# TODO: Is this still needed (now we have sensible defaults set below?)
 IF (CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
   SET(CMAKE_INSTALL_PREFIX "${CMAKE_SOURCE_DIR}/install" CACHE STRING
       "The install location" FORCE)
   LIST(APPEND CMAKE_PREFIX_PATH "${CMAKE_INSTALL_PREFIX}")
 ENDIF (CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
+
+
+# Set sensible defaults for a number of standard CMake variables
+# if the user didn't otherwise specify them.
+IF (NOT CMAKE_INSTALL_PREFIX)
+  SET(CMAKE_INSTALL_PREFIX "${CMAKE_SOURCE_DIR}/install" CACHE STRING
+      "Install path prefix, prepended onto install directories."
+      FORCE)
+ENDIF(NOT CMAKE_INSTALL_PREFIX)
+
+IF (NOT CMAKE_PREFIX_PATH)
+  LIST(APPEND CMAKE_PREFIX_PATH "${CMAKE_INSTALL_PREFIX}")
+ENDIF(NOT CMAKE_PREFIX_PATH)
+
+IF (NOT CMAKE_BUILD_TYPE)
+  SET(CMAKE_BUILD_TYPE "RelWithDebInfo" CACHE STRING
+      "Choose the type of build, options are: Debug Release RelWithDebInfo MinSizeRel."
+      FORCE)
+ENDIF(NOT CMAKE_BUILD_TYPE)
+
 
 SET(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/tlm/cmake/Modules/")
 SET(COUCHBASE_SERVER_BUILD True CACHE BOOL "Indicating this is a server build")
