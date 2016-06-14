@@ -20,6 +20,7 @@ FIND_LIBRARY(V8_LIBRARIES
              NAMES v8
              HINTS
                  ENV V8_DIR
+             PATH_SUFFIXES lib
              PATHS
                  ~/Library/Frameworks
                  /Library/Frameworks
