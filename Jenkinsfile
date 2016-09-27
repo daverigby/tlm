@@ -1,3 +1,13 @@
+properties([pipelineTriggers([gerrit(customUrl: '',
+                                     gerritProjects: [[branches: [[compareType: 'PLAIN',
+                                                                   pattern: env.BRANCH_NAME]],
+                                                       compareType: 'PLAIN',
+                                                       disableStrictForbiddenFileVerification: false,
+                                                       pattern: 'ep-engine']],
+                                     triggerOnEvents: [patchsetCreated(excludeDrafts: true,
+                                                                       excludeNoCodeChange: false,
+                                                                       excludeTrivialRebase: false)])])])
+
 node {
     // Checkout the manifest
     stage('Manifest') {
