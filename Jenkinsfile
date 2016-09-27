@@ -23,7 +23,9 @@ node {
 
     // Checkout the code from gerrit
     stage('Gerrit') {
-        sh "cbbuild/scripts/jenkins/commit_validation/checkout_dependencies.py $GERRIT_PATCHSET_REVISION $GERRIT_CHANGE_ID $GERRIT_PROJECT $GERRIT_REFSPEC"
+        if (env.GERRIT_PATCHSET_REVISION != null) {
+            sh "cbbuild/scripts/jenkins/commit_validation/checkout_dependencies.py $GERRIT_PATCHSET_REVISION $GERRIT_CHANGE_ID $GERRIT_PROJECT $GERRIT_REFSPEC"
+        }
     }
 
     stage('Configure') {
