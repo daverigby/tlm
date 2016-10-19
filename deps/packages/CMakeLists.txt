@@ -149,3 +149,9 @@ _ADD_DEP_PACKAGE(erlang R16B03-couchbase couchbase-watson 2)
 _ADD_DEP_PACKAGE(libsqlite3 3.7.2 3.7.2 1)
 _ADD_DEP_PACKAGE(pysqlite2 0ff6e32 0ff6e32 1)
 _ADD_DEP_PACKAGE(flatbuffers 1.2.0 v1.2.0 1)
+
+# Dependancies for Folly:
+_ADD_DEP_PACKAGE(double-conversion 2.0.1 v2.0.1 1)
+_ADD_DEP_PACKAGE(gflags 2.1.2 v2.1.2 1)
+_ADD_DEP_PACKAGE(google-glog 9581b3 9581b3 1)
+_ADD_DEP_PACKAGE(folly 2016.10.17.00 v2016.10.17.00 1)

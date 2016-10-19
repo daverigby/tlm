@@ -104,6 +104,7 @@ INCLUDE(FindCouchbaseFlatbuffers)
 INCLUDE(FindCouchbaseValgrind)
 INCLUDE(CouchbaseCompilerOptions)
 INCLUDE(FindCouchbaseV8)
+INCLUDE(FindCouchbaseFolly)
 
 IF (WIN32)
    SET(COUCHBASE_NETWORK_LIBS "Ws2_32")
