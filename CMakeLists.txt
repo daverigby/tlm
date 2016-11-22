@@ -87,6 +87,7 @@ MESSAGE(STATUS "Build type: ${CMAKE_BUILD_TYPE} (${CB_BUILD_TYPE})")
 
 INCLUDE(CouchbaseAddressSanitizer)
 INCLUDE(CouchbaseThreadSanitizer)
+INCLUDE(CouchbaseUndefinedBehaviourSanitizer)
 INCLUDE(CouchbaseMemoryAllocator)
 
 INCLUDE(FindCouchbaseOpenSSL)
